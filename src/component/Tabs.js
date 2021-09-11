@@ -5,16 +5,17 @@ import "../styles/tabs.css";
 function Tabs() {
   const [category, setcategory] = useState([]);
 
-  async function getData() {
-    return await axios({
+  async function getcategoryData() {
+    const res = await axios({
       method: "GET",
       url: `https://api.unsplash.com/topics?client_id=${process.env.REACT_APP_CLIENT_ID}`,
     });
+    setcategory(res.data);
   }
   
   useEffect(() => {
-    const res = getData();
-    setcategory(res.data);
+    // get topics 
+    getcategoryData();
   }, []);
 
   return (
