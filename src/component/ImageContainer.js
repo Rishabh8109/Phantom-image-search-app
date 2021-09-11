@@ -9,20 +9,24 @@ function ImageContainer() {
   const [Image1, setImages1] = useState([]);
   const [Image2, setImages2] = useState([]);
   const [Image3, setImages3] = useState([]);
-  let BASE_URL = `https://api.unsplash.com/photos?client_id=${process.env.REACT_APP_CLIENT_ID}`;
 
-  const ImageRequest1 = axios.get(BASE_URL);
-  const ImageRequest2 = axios.get(BASE_URL, { params: { page: 2 } });
-  const ImageRequest3 = axios.get(BASE_URL, { params: { page: 3 } });
 
-  useEffect(async () => {
-    await axios.all([ImageRequest1, ImageRequest2, ImageRequest3]).then(
-      axios.spread(function (res1, res2, res3) {
-        setImages1(res1.data);
-        setImages2(res2.data);
-        setImages3(res3.data);
-      })
-    );
+  
+  
+  function getImages() {
+    const ImageRequest1 = axios.get(`https://api.unsplash.com/photos?client_id=${process.env.REACT_APP_CLIENT_ID}`);
+    const ImageRequest2 = axios.get(`https://api.unsplash.com/photos?client_id=${process.env.REACT_APP_CLIENT_ID}`, { params: { page: 2 } });
+    const ImageRequest3 = axios.get(`https://api.unsplash.com/photos?client_id=${process.env.REACT_APP_CLIENT_ID}`, { params: { page: 3 } });
+    axios.all([ImageRequest1, ImageRequest2, ImageRequest3]).then(axios.spread(function (res1, res2, res3) {
+      setImages1(res1.data);
+      setImages2(res2.data);
+      setImages3(res3.data);
+    })
+  );
+  }
+
+  useEffect(() => {
+     getImages();
   }, []);
 
   return (
