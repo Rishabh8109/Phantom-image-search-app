@@ -31,8 +31,6 @@ function ImageModel() {
     setimageInfo([]);
   }
 
-
-
   return (
     <React.Fragment>
       <div
@@ -45,10 +43,7 @@ function ImageModel() {
           <BsX className="close" onClick={close} />
           {loading ? (
             <React.Fragment>
-              <div
-                className="skeleton"
-                style={{ width: "160px" }}
-              >
+              <div className="skeleton" style={{ width: "160px" }}>
                 <Skeleton
                   circle={true}
                   height={50}
@@ -80,13 +75,23 @@ function ImageModel() {
               <AiFillHeart className="heart" />
             </button>
             <button>
-               <a href={links && links.download + "?force=true"} download className="text-dark">Download</a>
+              <a
+                href={links && links.download + "?force=true"}
+                download
+                className="text-dark"
+              >
+                Download
+              </a>
             </button>
           </div>
         </div>
         <div className="card-body">
           {loading ? (
-            <Skeleton width={500} height={500} style={{margin  : 'auto' , display : 'block'}}/>
+            <Skeleton
+              width={500}
+              height={500}
+              style={{ margin: "auto", display: "block" }}
+            />
           ) : (
             <div className="image-wrapper">
               <img
@@ -123,7 +128,7 @@ function ImageModel() {
                       <Skeleton width={400} height={400} />
                     ) : (
                       <Link to={`/collections/${id}/${title}`}>
-                        <div style={{ color: "#000", textDecoration: "none" }}>
+                        <div  className="collection-card">
                           <Collections preview_photos={preview_photos} />
                           <h5 className="ml-3 title">{title}</h5>
                           <span className="ml-3 subtitle">
