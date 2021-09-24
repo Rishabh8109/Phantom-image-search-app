@@ -46,7 +46,7 @@ function ImageModel() {
           {loading ? (
             <React.Fragment>
               <div
-                className="skeleton d-flex align-items-center justify-content-between"
+                className="skeleton"
                 style={{ width: "160px" }}
               >
                 <Skeleton
@@ -86,7 +86,7 @@ function ImageModel() {
         </div>
         <div className="card-body">
           {loading ? (
-            <Skeleton width={500} height={500} className="m-auto d-block" />
+            <Skeleton width={500} height={500} style={{margin  : 'auto' , display : 'block'}}/>
           ) : (
             <div className="image-wrapper">
               <img

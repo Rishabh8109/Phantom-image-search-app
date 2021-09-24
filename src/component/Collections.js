@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/collection.css";
+import {Row , Col} from 'react-bootstrap';
 
 function Collections({ preview_photos }) {
 
@@ -12,10 +13,10 @@ function Collections({ preview_photos }) {
 
 
   return (
-    <div className="row collection">
+    <Row className="collection">
       {preview_photos && (
         <React.Fragment>
-          <div className="col-6 my-1 p-0">
+          <Col sm={6} style={{margin : ".1rem 0", padding : 0}}>
             <div
               className="wrapper-1"
               style={{
@@ -26,8 +27,8 @@ function Collections({ preview_photos }) {
                 ...imageStyle,
               }}
             ></div>
-          </div>
-          <div className="col-6 p-1">
+          </Col>
+          <Col sm={6} style={{padding : '.1rem'}}>
             <div
               className="wrapper-2"
               style={{
@@ -46,10 +47,10 @@ function Collections({ preview_photos }) {
                 backgroundColor : "rgb(245, 245, 245)",
               }}
             ></div>
-          </div>
+          </Col>
         </React.Fragment>
       )}
-    </div>
+    </Row>
   );
 }
 export default Collections;

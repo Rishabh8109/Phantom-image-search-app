@@ -4,7 +4,6 @@
   object-fit: contain;
   position: relative;
   cursor: zoom-in;
-  background-color: whitesmoke;
   z-index: 1
 }
 

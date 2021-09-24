@@ -4,6 +4,7 @@ import { Route, useRouteMatch, Link } from "react-router-dom";
 import CollectionsComponent from "../component/Collections";
 import "../styles/collection.css";
 import CollectionImage from "./CollectionImage";
+import { Col, Row } from "react-bootstrap";
 
 function Collections() {
   const [collection, setcollection] = useState([]);
@@ -25,8 +26,8 @@ function Collections() {
 
   return (
     <section
-      className="m-auto d-block collection-group"
-      style={{ width: "90%" }}
+      className="collection-group"
+      style={{ width: "90%" , margin : "2rem auto" , display : "block" }}
     >
       <Route path={`${url}`} exact>
         <h1>Collections</h1>
@@ -34,12 +35,12 @@ function Collections() {
           Explore the world through collections of beautiful photos free to use
           under the
         </p>
-        <div className="row">
+        <Row>
           {collection &&
             collection.map(
               ({ id, preview_photos, title, total_photos, user }) => (
-                <div
-                  className="col-sm-4"
+                <Col
+                  sm={4}
                   key={id}
                   style={{ cursor: "pointer" }}
                 >
@@ -56,10 +57,10 @@ function Collections() {
                       {""}
                     </div>
                   </Link>
-                </div>
+                </Col>
               )
             )}
-        </div>
+        </Row>
       </Route>
       <Route path={`${url}/:id/:slug`} exact>
         <CollectionImage />
