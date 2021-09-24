@@ -30,8 +30,8 @@ function Collections() {
       style={{ width: "90%" , margin : "2rem auto" , display : "block" }}
     >
       <Route path={`${url}`} exact>
-        <h1>Collections</h1>
-        <p>
+        <h1 className="m-3">Collections</h1>
+        <p className="m-3">
           Explore the world through collections of beautiful photos free to use
           under the
         </p>
