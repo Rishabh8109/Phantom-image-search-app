@@ -4,6 +4,8 @@
   object-fit: contain;
   position: relative;
   cursor: zoom-in;
+  background-color: whitesmoke;
+  z-index: 1
 }
 
 .image-wrapper:hover {
@@ -14,7 +16,6 @@
   width: 100%;
   height: auto;
   position: relative;
-  z-index: -2;
 }
 
 .image-wrapper .card-image:hover {
