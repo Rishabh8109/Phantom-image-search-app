@@ -1,3 +1,9 @@
+section  {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
 .categroy-tabs {
     margin: 0 auto;
     background: #fff;
@@ -11,20 +17,13 @@
     justify-content: flex-start;
 }
 
-.categroy-tabs ul li:nth-child(1) {
-    color: black;
-    background-color: whitesmoke;
-    border-radius: 50px;
-    border: 1px solid rgb(175, 175, 175);
-    padding: .7rem;
-}
-
 .categroy-tabs ul li {
     padding : 0 1rem;
     list-style: none;
     cursor: pointer;
     color: grey;
     font-size: .7rem;
+    margin:0 10px 0 10px;
 }
 
 .categroy-tabs ul li:hover {

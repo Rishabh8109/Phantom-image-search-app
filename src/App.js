@@ -1,34 +1,36 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./component/Header";
+import Main from "./pages/Main";
+import SearchedImage from "./pages/SearchedImage";
+import ImageProvider from "./context/ImageProvider";
+import Collections from "./pages/Collections";
 import "./App.css";
 
-import Searchbar from "./component/Searchbar";
-import ImageContainer from "./component/ImageContainer";
-import Tabs from "./component/Tabs";
-
-  function App() {
-    return (
-      <div className="App">
+function App() {
+  return (
+    <div className="App">
+      <Router>
         <Header />
-        <section className="hero">
-          <img
-            src="https://images.unsplash.com/photo-1510561467401-91b9835f745e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-            alt="hero_image"
-            className="hero-image"
-          />
-          <div className="wrapper">
-            <h1>Explore Quality Product Images With The Phantom</h1>
-            <p>Powered by unsplash</p>
-            <Searchbar />
-          </div>
-        </section>
-        <section>
-          <Tabs />
-        </section>
-        <section className="image-grid">
-          <ImageContainer />
-        </section>
-      </div>
-    );
-  }
+        <ImageProvider>
+          <Switch>
+            <Route path="/" exact>
+              <Main />
+            </Route>
+            <Route path="/photos/:slug">
+              <SearchedImage />
+            </Route>
+            <Route path="/photos/:slug/:id">
+              <SearchedImage />
+            </Route>
+            <Route path="/collections">
+              <Collections />
+            </Route>
+          </Switch>
+        </ImageProvider>
+      </Router>
+    </div>
+  );
+}
 
-  export default App;
+export default App;

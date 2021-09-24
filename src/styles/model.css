@@ -1,0 +1,270 @@
+.image-model {
+    width: 90%;
+    background: white;
+    height: auto;
+    position:fixed;
+    top: 5%;
+    left: 5%;
+    z-index: 10;
+    overflow-y: auto;  
+    animation: opa .1s ease-out forwards
+  }
+
+@keyframes opa {
+  from {
+    transform: scale(.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.backdrop {
+  background-color: black;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.cardHeader {
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px dashed lightgrey;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardHeader .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: auto;
+  max-width: auto;
+}
+
+.cardHeader .user h3 {
+  font-weight: 500;
+  font-size: .5rem;
+  margin-top: 10px;
+}
+
+.cardHeader .user p {
+  font-weight: normal;
+  font-size: 0.4rem;
+  color: rgb(104, 102, 102);
+  margin-top: 5px;
+}
+
+.card-body {
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.card-body .image-wrapper {
+  width: 300px;
+  margin: auto;
+  display: block;
+  height:fit-content;
+}
+
+.card-body  img {
+  width: 100%;
+  object-fit: contain;
+  height: auto;
+}
+
+.close {
+  position: absolute;
+  top: 35%;
+  right: 5%;
+  color: rgb(61, 61, 61);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 1;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.actions {
+  margin-right: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 125px;
+}
+
+.heart {
+  font-size:1rem;
+}
+
+button {
+  border:1px solid rgb(155, 153, 153);
+  outline: none;
+  background: transparent;
+  height: 30px;
+  font-size: .5rem !important;
+  padding : 0rem .6rem;
+  border-radius: 3px;
+  opacity: .7;
+  cursor: pointer;
+  color:black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button:hover {
+  opacity: 1;
+  color: rgb(29, 28, 28);
+}
+
+.image-info {
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  padding: 1rem 0;
+  
+}
+
+.image-info .row:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* .image-info .col {
+  margin: 1rem 0 0 3rem;
+} */
+
+.image-info .col p:nth-child(1) {
+  color: grey;
+}
+
+.image-info .col p:nth-child(2) { 
+  color: rgb(17, 16, 16);
+  font-size: 1rem;
+  margin-top: .3rem;
+}
+
+.image-info .row:nth-child(2) button {
+  font-size: .9rem;
+  display: inline;
+}
+
+
+.collection-heading {
+  margin-left: 1rem;
+  margin-top: 2rem;
+  color: rgb(78, 76, 76);
+  font-size: 1.2rem;
+}
+
+
+.title , .subtitle {
+  margin-left: 1.5rem;
+  font-size: 1rem;
+}
+.subtitle {
+  color: grey;
+}
+
+@media screen and (min-width : 40em) {
+  .collections {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 1rem;
+    overflow:hidden;
+  }
+
+  .cardHeader .user h3 {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .cardHeader .user p {
+    font-weight: normal;
+    font-size: 0.7rem;
+    color: rgb(104, 102, 102);
+    margin-top: 5px;
+  }
+  
+  .image-model {
+    width: 90%;
+    background: white;
+    height: auto;
+    position:fixed;
+    top: 5%;
+    left: 5%;
+    z-index: 10;
+    overflow-y: auto;  
+    animation: opa .1s ease-out forwards
+  }
+  .card-body .image-wrapper {
+    width: 500px;
+    margin: auto;
+    display: block;
+    height:fit-content;
+  }
+  
+  .card-body  img {
+    width: 100%;
+    object-fit: contain;
+    height: auto;
+  }
+
+  .image-info {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 1rem 3rem;
+  }
+
+  button {
+    border:1px solid rgb(63, 63, 63);
+    outline: none;
+    background: transparent;
+    height: 40px;
+    padding : 0rem .6rem;
+    height: 30px;
+    border-radius: 3px;
+    opacity: .7;
+    cursor: pointer;
+    color:black;
+    font-size: 1rem !important;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  button:hover {
+    opacity: 1;
+    color: rgb(29, 28, 28);
+  }
+  
+  
+.close {
+  position: absolute;
+  top: 38%;
+  right: 1%;
+  color: rgb(61, 61, 61);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 1;
+}
+
+  
+}
